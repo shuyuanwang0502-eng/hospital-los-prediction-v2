@@ -1,0 +1,4 @@
+,admissions,patients,% Short,% Medium,% Long
+train,191474,55209,31.9,48.5,19.6
+validation,63459,18404,32.1,48.3,19.7
+test,63505,18404,32.0,48.7,19.3

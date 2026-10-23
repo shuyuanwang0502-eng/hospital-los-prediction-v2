@@ -1,0 +1,15 @@
+,macro_f1_drop,std
+Hospital_code,0.0576,0.0016
+Ward_Type,0.0409,0.0014
+Admission_Deposit,0.0399,0.0026
+City_Code_Patient,0.0276,0.0017
+Type of Admission,0.022,0.001
+Severity of Illness,0.0176,0.0012
+Bed Grade,0.0158,0.002
+Available Extra Rooms in Hospital,0.0115,0.0013
+Department,0.0066,0.0015
+Age,0.0065,0.0027
+Hospital_type_code,0.0,0.0002
+Hospital_region_code,-0.0,0.0
+Ward_Facility_Code,-0.0001,0.0001
+City_Code_Hospital,-0.0002,0.0002

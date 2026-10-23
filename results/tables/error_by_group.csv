@@ -1,0 +1,18 @@
+feature,level,admissions,% Long (actual),accuracy %,Long recall %
+severity,Extreme,11547,26.4,54.8,43.8
+severity,Minor,17332,13.7,52.3,13.1
+severity,Moderate,34626,19.8,54.7,31.8
+Ward_Type,P,1034,6.6,60.7,0.0
+Ward_Type,Q,20991,10.8,58.3,9.3
+Ward_Type,R,25599,18.7,54.3,21.7
+Ward_Type,S,15590,32.5,47.7,50.6
+Type of Admission,Emergency,23446,17.8,50.9,27.0
+Type of Admission,Trauma,30279,21.5,56.7,36.1
+Type of Admission,Urgent,9780,16.1,53.8,22.0
+age_group,0-30,12802,15.3,53.1,18.8
+age_group,31-60,35152,19.2,55.0,32.9
+age_group,61-100,15551,22.7,52.9,34.7
+Department,TB & Chest disease,1938,19.5,48.6,11.9
+Department,anesthesia,5847,15.7,54.1,15.2
+Department,gynecology,49770,19.5,54.6,32.7
+Department,radiotherapy,5694,20.6,51.5,35.2

@@ -1,0 +1,6 @@
+model,split,test set,visitors,accuracy,macro_f1,balanced_accuracy,log_loss
+"C1 original RF, original features, random admission split",random admissions 75/25,own random 25%,yes,0.6051,0.5905,0.5944,0.807
+"C2 original RF, original features, patient split",by patient (this study),this study's test set,yes,0.6023,0.5849,0.5904,0.8095
+"C3 original RF, original features without Visitors, patient split",by patient (this study),this study's test set,no,0.5238,0.4247,0.4311,0.9473
+"N1 new pipeline + Visitors, patient split",by patient (this study),this study's test set,yes,0.6268,0.6232,0.6172,0.7761
+"N2 new pipeline, main features, patient split",by patient (this study),this study's test set,no,0.5409,0.4847,0.476,0.927

@@ -1,0 +1,9 @@
+feature,levels (n>=200),lowest Long share,highest Long share,spread (pp)
+Hospital_code,32,0.077,0.348,27.1
+Ward_Type,5,0.071,0.332,26.0
+Hospital_type_code,7,0.172,0.322,15.0
+Age,10,0.141,0.289,14.7
+Department,5,0.153,0.297,14.4
+Severity of Illness,3,0.139,0.262,12.3
+Type of Admission,3,0.165,0.216,5.1
+Bed Grade,4,0.178,0.217,3.9

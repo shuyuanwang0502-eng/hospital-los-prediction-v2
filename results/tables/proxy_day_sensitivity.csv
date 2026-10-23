@@ -1,0 +1,5 @@
+mapping,mean actual batch total,Hospital x ward x severity average MAPE %,11-bin model MAPE %
+"midpoint, >100 = 110 (main)",3203.32,5.24,4.96
+"midpoint, >100 = 150",3287.7,5.93,5.63
+"lower edge (0, 11, ..., 101)",2785.46,5.99,5.66
+"upper edge (10, ..., 100, >100 = 150)",3777.15,5.04,4.79

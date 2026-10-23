@@ -1,0 +1,5 @@
+model,accuracy,balanced_accuracy,macro_f1,log_loss,roc_auc_long,iterations,deployable at admission?
+Main (admission-time features),0.5409,0.476,0.4847,0.927,0.7518,67,yes
+Main + Visitors,0.6268,0.6172,0.6232,0.7761,0.8931,98,only if visitors are known at admission
+Main + patient aggregates (retrospective),0.5506,0.4906,0.5007,0.9131,0.7702,64,no (uses other admissions)
+Main + Visitors + all aggregates (retrospective),0.6292,0.6199,0.625,0.7695,0.8977,91,no (uses other admissions)

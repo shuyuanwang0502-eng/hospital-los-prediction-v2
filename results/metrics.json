@@ -1,0 +1,595 @@
+{
+  "quick_mode": false,
+  "settings": {
+    "patient_sample_fraction": 1.0,
+    "hgb_max_iter": 500,
+    "hgb_max_iter_11bin": 400,
+    "rf_n_estimators": 200,
+    "bootstrap_reps": 300,
+    "mc_draws": 2000,
+    "importance_rows": 20000,
+    "importance_repeats": 5
+  },
+  "data": {
+    "rows_in_file": 455495,
+    "labeled_rows": 318438,
+    "unlabeled_rows": 137057,
+    "labeled_patients": 92017,
+    "patients_in_both": 0,
+    "duplicate_rows_with_twin": 124,
+    "duplicate_extra_copies": 65,
+    "analysis_rows": 318438,
+    "analysis_patients": 92017,
+    "class_share": {
+      "Short": 0.3195,
+      "Medium": 0.4848,
+      "Long": 0.1956
+    }
+  },
+  "eda": {
+    "corr_visitors_los_class": 0.417,
+    "same_patient_los_corr": 0.316,
+    "random_pair_los_corr": 0.0,
+    "share_patients_multiple_admissions": 0.779
+  },
+  "split": [
+    {
+      "set": "train",
+      "admissions": 191474,
+      "patients": 55209,
+      "% Short": 31.9,
+      "% Medium": 48.5,
+      "% Long": 19.6
+    },
+    {
+      "set": "validation",
+      "admissions": 63459,
+      "patients": 18404,
+      "% Short": 32.1,
+      "% Medium": 48.3,
+      "% Long": 19.7
+    },
+    {
+      "set": "test",
+      "admissions": 63505,
+      "patients": 18404,
+      "% Short": 32.0,
+      "% Medium": 48.7,
+      "% Long": 19.3
+    }
+  ],
+  "validation": [
+    {
+      "model": "Majority class",
+      "family": "baseline",
+      "setting": "-",
+      "accuracy": 0.4825,
+      "balanced_accuracy": 0.3333,
+      "macro_f1": 0.217,
+      "log_loss": 1.0362,
+      "fit_seconds": 0.0
+    },
+    {
+      "model": "Lookup table",
+      "family": "baseline",
+      "setting": "-",
+      "accuracy": 0.5074,
+      "balanced_accuracy": 0.4037,
+      "macro_f1": 0.3875,
+      "log_loss": 0.985,
+      "fit_seconds": 0.0
+    },
+    {
+      "model": "Logistic regression (C=0.1)",
+      "family": "logistic regression",
+      "setting": "C=0.1",
+      "accuracy": 0.5157,
+      "balanced_accuracy": 0.4264,
+      "macro_f1": 0.4237,
+      "log_loss": 0.9637,
+      "fit_seconds": 3.0706
+    },
+    {
+      "model": "Logistic regression (C=1.0)",
+      "family": "logistic regression",
+      "setting": "C=1.0",
+      "accuracy": 0.5156,
+      "balanced_accuracy": 0.4266,
+      "macro_f1": 0.4241,
+      "log_loss": 0.9637,
+      "fit_seconds": 2.933
+    },
+    {
+      "model": "Random forest (min_leaf=5)",
+      "family": "random forest",
+      "setting": "min_samples_leaf=5",
+      "accuracy": 0.533,
+      "balanced_accuracy": 0.4617,
+      "macro_f1": 0.4685,
+      "log_loss": 0.939,
+      "fit_seconds": 20.8815
+    },
+    {
+      "model": "Random forest (min_leaf=25)",
+      "family": "random forest",
+      "setting": "min_samples_leaf=25",
+      "accuracy": 0.5341,
+      "balanced_accuracy": 0.453,
+      "macro_f1": 0.4564,
+      "log_loss": 0.9378,
+      "fit_seconds": 16.5589
+    },
+    {
+      "model": "Gradient boosting (leaves=15, min_leaf=20)",
+      "family": "gradient boosting",
+      "setting": "max_leaf_nodes=15, min_samples_leaf=20, iterations=229",
+      "accuracy": 0.5417,
+      "balanced_accuracy": 0.4772,
+      "macro_f1": 0.4858,
+      "log_loss": 0.9262,
+      "fit_seconds": 29.3428
+    },
+    {
+      "model": "Gradient boosting (leaves=31, min_leaf=100)",
+      "family": "gradient boosting",
+      "setting": "max_leaf_nodes=31, min_samples_leaf=100, iterations=114",
+      "accuracy": 0.5425,
+      "balanced_accuracy": 0.4785,
+      "macro_f1": 0.4872,
+      "log_loss": 0.9256,
+      "fit_seconds": 28.5219
+    },
+    {
+      "model": "Gradient boosting (leaves=63, min_leaf=200)",
+      "family": "gradient boosting",
+      "setting": "max_leaf_nodes=63, min_samples_leaf=200, iterations=67",
+      "accuracy": 0.5424,
+      "balanced_accuracy": 0.4788,
+      "macro_f1": 0.4875,
+      "log_loss": 0.9261,
+      "fit_seconds": 35.4442
+    }
+  ],
+  "selection": {
+    "best_per_family": {
+      "gradient boosting": "Gradient boosting (leaves=63, min_leaf=200)",
+      "logistic regression": "Logistic regression (C=1.0)",
+      "random forest": "Random forest (min_leaf=5)"
+    },
+    "final_model": "Gradient boosting (leaves=63, min_leaf=200)",
+    "hgb_config": {
+      "max_leaf_nodes": 63,
+      "min_samples_leaf": 200
+    },
+    "hgb_iterations": 67
+  },
+  "test": [
+    {
+      "model": "Majority class",
+      "accuracy": 0.4869,
+      "accuracy_ci_low": 0.4823,
+      "accuracy_ci_high": 0.4915,
+      "macro_f1": 0.2183,
+      "macro_f1_ci_low": 0.2169,
+      "macro_f1_ci_high": 0.2197,
+      "balanced_accuracy": 0.3333,
+      "log_loss": 1.0326
+    },
+    {
+      "model": "Lookup table",
+      "accuracy": 0.5062,
+      "accuracy_ci_low": 0.5014,
+      "accuracy_ci_high": 0.5108,
+      "macro_f1": 0.384,
+      "macro_f1_ci_low": 0.379,
+      "macro_f1_ci_high": 0.3881,
+      "balanced_accuracy": 0.4,
+      "log_loss": 0.984
+    },
+    {
+      "model": "Gradient boosting (leaves=63, min_leaf=200)",
+      "accuracy": 0.5409,
+      "accuracy_ci_low": 0.5367,
+      "accuracy_ci_high": 0.545,
+      "macro_f1": 0.4847,
+      "macro_f1_ci_low": 0.4802,
+      "macro_f1_ci_high": 0.4894,
+      "balanced_accuracy": 0.476,
+      "log_loss": 0.927
+    },
+    {
+      "model": "Logistic regression (C=1.0)",
+      "accuracy": 0.5157,
+      "accuracy_ci_low": 0.5109,
+      "accuracy_ci_high": 0.5196,
+      "macro_f1": 0.4212,
+      "macro_f1_ci_low": 0.4165,
+      "macro_f1_ci_high": 0.4251,
+      "balanced_accuracy": 0.4236,
+      "log_loss": 0.9635
+    },
+    {
+      "model": "Random forest (min_leaf=5)",
+      "accuracy": 0.5354,
+      "accuracy_ci_low": 0.5318,
+      "accuracy_ci_high": 0.5393,
+      "macro_f1": 0.4699,
+      "macro_f1_ci_low": 0.4653,
+      "macro_f1_ci_high": 0.4743,
+      "balanced_accuracy": 0.4626,
+      "log_loss": 0.9387
+    }
+  ],
+  "test_differences": {
+    "runner_up": "Random forest (min_leaf=5)",
+    "macro_f1_diff_vs_runner_up": [
+      0.014806135388259515,
+      0.01131200332323204,
+      0.018414057807643824
+    ],
+    "accuracy_diff_vs_runner_up": [
+      0.005502868011528955,
+      0.002188629791494695,
+      0.0085612157112353
+    ],
+    "macro_f1_diff_vs_lookup": [
+      0.10082860603696948,
+      0.09537361269238963,
+      0.10591856572606607
+    ]
+  },
+  "final_per_class": [
+    {
+      "class": "Short",
+      "precision": 0.5248,
+      "recall": 0.3759,
+      "f1": 0.438,
+      "support": 20326
+    },
+    {
+      "class": "Medium",
+      "precision": 0.5566,
+      "recall": 0.7401,
+      "f1": 0.6354,
+      "support": 30922
+    },
+    {
+      "class": "Long",
+      "precision": 0.4884,
+      "recall": 0.3119,
+      "f1": 0.3807,
+      "support": 12257
+    }
+  ],
+  "final_confusion_matrix": [
+    [
+      7640,
+      11328,
+      1358
+    ],
+    [
+      5389,
+      22886,
+      2647
+    ],
+    [
+      1529,
+      6905,
+      3823
+    ]
+  ],
+  "long_stay_ranking": [
+    {
+      "model": "Lookup table",
+      "roc_auc_long": 0.683,
+      "average_precision_long": 0.3369
+    },
+    {
+      "model": "Gradient boosting (leaves=63, min_leaf=200)",
+      "roc_auc_long": 0.7518,
+      "average_precision_long": 0.4323
+    },
+    {
+      "model": "Logistic regression (C=1.0)",
+      "roc_auc_long": 0.7084,
+      "average_precision_long": 0.3617
+    },
+    {
+      "model": "Random forest (min_leaf=5)",
+      "roc_auc_long": 0.7416,
+      "average_precision_long": 0.42
+    },
+    {
+      "model": "Random ranking (reference)",
+      "roc_auc_long": 0.5,
+      "average_precision_long": 0.193
+    }
+  ],
+  "supplementary": [
+    {
+      "model": "Main (admission-time features)",
+      "accuracy": 0.5409,
+      "balanced_accuracy": 0.476,
+      "macro_f1": 0.4847,
+      "log_loss": 0.927,
+      "roc_auc_long": 0.7518,
+      "iterations": 67,
+      "deployable at admission?": "yes"
+    },
+    {
+      "model": "Main + Visitors",
+      "accuracy": 0.6268,
+      "balanced_accuracy": 0.6172,
+      "macro_f1": 0.6232,
+      "log_loss": 0.7761,
+      "roc_auc_long": 0.8931,
+      "iterations": 98,
+      "deployable at admission?": "only if visitors are known at admission"
+    },
+    {
+      "model": "Main + patient aggregates (retrospective)",
+      "accuracy": 0.5506,
+      "balanced_accuracy": 0.4906,
+      "macro_f1": 0.5007,
+      "log_loss": 0.9131,
+      "roc_auc_long": 0.7702,
+      "iterations": 64,
+      "deployable at admission?": "no (uses other admissions)"
+    },
+    {
+      "model": "Main + Visitors + all aggregates (retrospective)",
+      "accuracy": 0.6292,
+      "balanced_accuracy": 0.6199,
+      "macro_f1": 0.625,
+      "log_loss": 0.7695,
+      "roc_auc_long": 0.8977,
+      "iterations": 91,
+      "deployable at admission?": "no (uses other admissions)"
+    }
+  ],
+  "controlled": [
+    {
+      "model": "C1 original RF, original features, random admission split",
+      "split": "random admissions 75/25",
+      "test set": "own random 25%",
+      "visitors": "yes",
+      "accuracy": 0.6051,
+      "macro_f1": 0.5905,
+      "balanced_accuracy": 0.5944,
+      "log_loss": 0.807
+    },
+    {
+      "model": "C2 original RF, original features, patient split",
+      "split": "by patient (this study)",
+      "test set": "this study's test set",
+      "visitors": "yes",
+      "accuracy": 0.6023,
+      "macro_f1": 0.5849,
+      "balanced_accuracy": 0.5904,
+      "log_loss": 0.8095
+    },
+    {
+      "model": "C3 original RF, original features without Visitors, patient split",
+      "split": "by patient (this study)",
+      "test set": "this study's test set",
+      "visitors": "no",
+      "accuracy": 0.5238,
+      "macro_f1": 0.4247,
+      "balanced_accuracy": 0.4311,
+      "log_loss": 0.9473
+    },
+    {
+      "model": "N1 new pipeline + Visitors, patient split",
+      "split": "by patient (this study)",
+      "test set": "this study's test set",
+      "visitors": "yes",
+      "accuracy": 0.6268,
+      "macro_f1": 0.6232,
+      "balanced_accuracy": 0.6172,
+      "log_loss": 0.7761
+    },
+    {
+      "model": "N2 new pipeline, main features, patient split",
+      "split": "by patient (this study)",
+      "test set": "this study's test set",
+      "visitors": "no",
+      "accuracy": 0.5409,
+      "macro_f1": 0.4847,
+      "balanced_accuracy": 0.476,
+      "log_loss": 0.927
+    }
+  ],
+  "permutation_importance": {
+    "Hospital_code": 0.0576,
+    "Ward_Type": 0.0409,
+    "Admission_Deposit": 0.0399,
+    "City_Code_Patient": 0.0276,
+    "Type of Admission": 0.022,
+    "Severity of Illness": 0.0176,
+    "Bed Grade": 0.0158,
+    "Available Extra Rooms in Hospital": 0.0115,
+    "Department": 0.0066,
+    "Age": 0.0065,
+    "Hospital_type_code": 0.0,
+    "Hospital_region_code": -0.0,
+    "Ward_Facility_Code": -0.0001,
+    "City_Code_Hospital": -0.0002
+  },
+  "lr_long_coefficients_top": {
+    "Ward_Type_S": 0.533,
+    "City_Code_Patient_3": 0.523,
+    "Hospital_code_29": 0.393,
+    "Department_surgery": 0.324,
+    "Hospital_code_5": 0.208,
+    "Severity of Illness": 0.197,
+    "City_Code_Patient_15": 0.193,
+    "Hospital_code_16": 0.192,
+    "Ward_Type_P": -0.612,
+    "Ward_Type_Q": -0.42,
+    "Department_anesthesia": -0.416,
+    "Hospital_code_4": -0.38,
+    "City_Code_Patient_21": -0.372
+  },
+  "long_stays_predicted_as": {
+    "predicted Short": 0.1247,
+    "predicted Medium": 0.5634,
+    "predicted Long": 0.3119
+  },
+  "calibration_p_long": {
+    "ece": 0.0038,
+    "brier_model": 0.1341,
+    "brier_constant": 0.1558,
+    "mean_predicted": 0.1954,
+    "observed_rate": 0.193,
+    "max_bin_gap": 0.0156
+  },
+  "bin_model": {
+    "iterations": 40.0,
+    "test_accuracy_11bin": 0.3478,
+    "test_within_one_bin": 0.6546,
+    "test_log_loss_11bin": 1.7473,
+    "majority_bin_accuracy": 0.2739
+  },
+  "per_admission_mae_days": {
+    "Overall average": 16.22,
+    "Hospital average": 15.93,
+    "Hospital x ward x severity average": 15.4,
+    "11-bin model": 14.55
+  },
+  "batch_interval_validation": {
+    "coverage_before": 0.9045,
+    "temperature": 1.0,
+    "coverage_after": 0.9045,
+    "n_batches": 618
+  },
+  "batches": {
+    "n_test_batches": 621,
+    "batch_size": 100,
+    "random": {
+      "Overall average": {
+        "MAPE %": 10.249,
+        "bias %": 1.866
+      },
+      "Hospital average": {
+        "MAPE %": 5.396,
+        "bias %": 0.854
+      },
+      "Hospital x ward x severity average": {
+        "MAPE %": 5.243,
+        "bias %": 0.799
+      },
+      "11-bin model": {
+        "MAPE %": 4.962,
+        "bias %": 0.438
+      }
+    },
+    "random_coverage": 0.9114,
+    "shifted": {
+      "Overall average": {
+        "MAPE %": 10.007,
+        "bias %": -3.106
+      },
+      "Hospital average": {
+        "MAPE %": 6.01,
+        "bias %": -4.061
+      },
+      "Hospital x ward x severity average": {
+        "MAPE %": 4.947,
+        "bias %": -0.286
+      },
+      "11-bin model": {
+        "MAPE %": 4.803,
+        "bias %": -0.118
+      }
+    },
+    "shifted_coverage": 0.9179,
+    "mean_actual_random": 3203.3,
+    "mean_actual_shifted": 3365.6
+  },
+  "proxy_sensitivity": {
+    "midpoint, >100 = 110 (main)": {
+      "mean actual batch total": 3203.32,
+      "Hospital x ward x severity average MAPE %": 5.24,
+      "11-bin model MAPE %": 4.96
+    },
+    "midpoint, >100 = 150": {
+      "mean actual batch total": 3287.7,
+      "Hospital x ward x severity average MAPE %": 5.93,
+      "11-bin model MAPE %": 5.63
+    },
+    "lower edge (0, 11, ..., 101)": {
+      "mean actual batch total": 2785.46,
+      "Hospital x ward x severity average MAPE %": 5.99,
+      "11-bin model MAPE %": 5.66
+    },
+    "upper edge (10, ..., 100, >100 = 150)": {
+      "mean actual batch total": 3777.15,
+      "Hospital x ward x severity average MAPE %": 5.04,
+      "11-bin model MAPE %": 4.79
+    }
+  },
+  "screening": {
+    "10% | Final model": {
+      "recall": 0.2668,
+      "precision": 0.515,
+      "lift": 2.6681,
+      "share_of_proxy_bed_days": 0.1562
+    },
+    "10% | Lookup table": {
+      "recall": 0.2173,
+      "precision": 0.4195,
+      "lift": 2.1736,
+      "share_of_proxy_bed_days": 0.1374
+    },
+    "10% | Random (expected)": {
+      "recall": 0.1,
+      "precision": 0.193,
+      "lift": 1.0,
+      "share_of_proxy_bed_days": 0.1
+    },
+    "20% | Final model": {
+      "recall": 0.4533,
+      "precision": 0.4374,
+      "lift": 2.2665,
+      "share_of_proxy_bed_days": 0.284
+    },
+    "20% | Lookup table": {
+      "recall": 0.3774,
+      "precision": 0.3642,
+      "lift": 1.8871,
+      "share_of_proxy_bed_days": 0.2575
+    },
+    "20% | Random (expected)": {
+      "recall": 0.2,
+      "precision": 0.193,
+      "lift": 1.0,
+      "share_of_proxy_bed_days": 0.2
+    },
+    "30% | Final model": {
+      "recall": 0.5944,
+      "precision": 0.3824,
+      "lift": 1.9811,
+      "share_of_proxy_bed_days": 0.3967
+    },
+    "30% | Lookup table": {
+      "recall": 0.5097,
+      "precision": 0.3279,
+      "lift": 1.6988,
+      "share_of_proxy_bed_days": 0.3691
+    },
+    "30% | Random (expected)": {
+      "recall": 0.3,
+      "precision": 0.193,
+      "lift": 1.0,
+      "share_of_proxy_bed_days": 0.3
+    }
+  },
+  "runtime_seconds": 530.8,
+  "environment": {
+    "python": "3.13.17",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.1",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  }
+}

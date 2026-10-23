@@ -1,0 +1,6 @@
+model,roc_auc_long,average_precision_long
+Lookup table,0.683,0.3369
+"Gradient boosting (leaves=63, min_leaf=200)",0.7518,0.4323
+Logistic regression (C=1.0),0.7084,0.3617
+Random forest (min_leaf=5),0.7416,0.42
+Random ranking (reference),0.5,0.193

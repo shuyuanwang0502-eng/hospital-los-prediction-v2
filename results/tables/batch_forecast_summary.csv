@@ -1,0 +1,6 @@
+,random batches,random batches,shifted case mix,shifted case mix
+,MAPE %,bias %,MAPE %,bias %
+Overall average,10.25,1.87,10.01,-3.11
+Hospital average,5.4,0.85,6.01,-4.06
+Hospital x ward x severity average,5.24,0.8,4.95,-0.29
+11-bin model,4.96,0.44,4.8,-0.12

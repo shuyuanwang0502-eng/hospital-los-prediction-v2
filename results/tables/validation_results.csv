@@ -1,0 +1,10 @@
+model,family,setting,accuracy,balanced_accuracy,macro_f1,log_loss,fit_seconds
+Majority class,baseline,-,0.4825,0.3333,0.217,1.0362,0.0
+Lookup table,baseline,-,0.5074,0.4037,0.3875,0.985,0.0
+Logistic regression (C=0.1),logistic regression,C=0.1,0.5157,0.4264,0.4237,0.9637,3.0706
+Logistic regression (C=1.0),logistic regression,C=1.0,0.5156,0.4266,0.4241,0.9637,2.933
+Random forest (min_leaf=5),random forest,min_samples_leaf=5,0.533,0.4617,0.4685,0.939,20.8815
+Random forest (min_leaf=25),random forest,min_samples_leaf=25,0.5341,0.453,0.4564,0.9378,16.5589
+"Gradient boosting (leaves=15, min_leaf=20)",gradient boosting,"max_leaf_nodes=15, min_samples_leaf=20, iterations=229",0.5417,0.4772,0.4858,0.9262,29.3428
+"Gradient boosting (leaves=31, min_leaf=100)",gradient boosting,"max_leaf_nodes=31, min_samples_leaf=100, iterations=114",0.5425,0.4785,0.4872,0.9256,28.5219
+"Gradient boosting (leaves=63, min_leaf=200)",gradient boosting,"max_leaf_nodes=63, min_samples_leaf=200, iterations=67",0.5424,0.4788,0.4875,0.9261,35.4442

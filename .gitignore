@@ -1,0 +1,14 @@
+# Quick test runs never belong in the repository
+results_quick/
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Environments and editors
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store

@@ -1,0 +1,19 @@
+field,meaning,type,available at admission?
+case_id,Admission identifier,ID,Not a feature
+Hospital_code,Hospital (32 hospitals),Categorical,Yes
+Hospital_type_code,Hospital type (a-g),Categorical,Yes
+City_Code_Hospital,City of the hospital,Categorical,Yes
+Hospital_region_code,Region of the hospital (X/Y/Z),Categorical,Yes
+Available Extra Rooms in Hospital,Free rooms in the hospital,Numeric,Yes (assumed snapshot at admission)
+Department,Treating department,Categorical,Yes (assumed assigned at admission)
+Ward_Type,Ward type (P-U),Categorical,Yes (assumed admission ward)
+Ward_Facility_Code,Ward facility (A-F),Categorical,Yes
+Bed Grade,Condition of the bed (1-4),Ordinal,Yes (assumed)
+patientid,Patient identifier,ID,Not a feature; used to group the split
+City_Code_Patient,City where the patient lives,Categorical,Yes
+Type of Admission,Trauma / Emergency / Urgent,Categorical,Yes
+Severity of Illness,Minor / Moderate / Extreme,Ordinal,Yes (assumed assessed at admission)
+Visitors with Patient,Number of visitors with the patient,Count,UNCLEAR (may be recorded during the stay)
+Age,Age band (0-10 ... 91-100),Ordinal,Yes
+Admission_Deposit,Deposit paid at admission,Numeric,Yes
+Stay,"Length of stay, 11 bins of 10 days",Target,Outcome
